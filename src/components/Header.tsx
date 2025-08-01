@@ -4,6 +4,7 @@ import { Search, ShoppingCart, User, MapPin, Menu } from 'lucide-react'
 import { useState } from 'react'
 import { cn } from '@/lib/utils'
 import Cart from './Cart'
+import SearchResults from './SearchResults'
 import { Product } from '@/types'
 
 interface CartItem {
@@ -15,11 +16,13 @@ interface HeaderProps {
   cartItems?: CartItem[]
   onUpdateCartQuantity?: (productId: string, quantity: number) => void
   onRemoveFromCart?: (productId: string) => void
+  onAddToCart?: (product: Product, quantity: number) => void
 }
 
-export default function Header({ cartItems = [], onUpdateCartQuantity, onRemoveFromCart }: HeaderProps) {
+export default function Header({ cartItems = [], onUpdateCartQuantity, onRemoveFromCart, onAddToCart }: HeaderProps) {
   const [searchQuery, setSearchQuery] = useState('')
   const [isCartOpen, setIsCartOpen] = useState(false)
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
 
   const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0)
 
@@ -61,19 +64,31 @@ export default function Header({ cartItems = [], onUpdateCartQuantity, onRemoveF
               </div>
             </div>
 
-            {/* Search */}
-            <div className="flex-1 max-w-2xl mx-8 hidden md:block">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <input
-                  type="text"
-                  placeholder="Search for products..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-                />
-              </div>
+                      {/* Search */}
+          <div className="flex-1 max-w-2xl mx-8 hidden md:block">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <input
+                type="text"
+                placeholder="Search for products..."
+                value={searchQuery}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value)
+                  if (e.target.value.trim()) {
+                    setIsSearchOpen(true)
+                  } else {
+                    setIsSearchOpen(false)
+                  }
+                }}
+                onFocus={() => {
+                  if (searchQuery.trim()) {
+                    setIsSearchOpen(true)
+                  }
+                }}
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+              />
             </div>
+          </div>
 
             {/* Actions */}
             <div className="flex items-center space-x-4">
@@ -95,19 +110,31 @@ export default function Header({ cartItems = [], onUpdateCartQuantity, onRemoveF
             </div>
           </div>
 
-          {/* Mobile search */}
-          <div className="md:hidden pb-4">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-              <input
-                type="text"
-                placeholder="Search for products..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-              />
-            </div>
+                  {/* Mobile search */}
+        <div className="md:hidden pb-4">
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+            <input
+              type="text"
+              placeholder="Search for products..."
+              value={searchQuery}
+              onChange={(e) => {
+                setSearchQuery(e.target.value)
+                if (e.target.value.trim()) {
+                  setIsSearchOpen(true)
+                } else {
+                  setIsSearchOpen(false)
+                }
+              }}
+              onFocus={() => {
+                if (searchQuery.trim()) {
+                  setIsSearchOpen(true)
+                }
+              }}
+              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+            />
           </div>
+        </div>
         </div>
       </header>
 
@@ -119,6 +146,18 @@ export default function Header({ cartItems = [], onUpdateCartQuantity, onRemoveF
         onUpdateQuantity={onUpdateCartQuantity || (() => {})}
         onRemoveItem={onRemoveFromCart || (() => {})}
       />
+
+      {/* Search Results Component */}
+      {isSearchOpen && (
+        <SearchResults
+          query={searchQuery}
+          onClose={() => {
+            setIsSearchOpen(false)
+            setSearchQuery('')
+          }}
+          onAddToCart={onAddToCart || (() => {})}
+        />
+      )}
     </>
   )
 } 
