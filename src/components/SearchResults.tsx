@@ -71,7 +71,7 @@ export default function SearchResults({ query, onClose, onAddToCart }: SearchRes
           <div className="p-4">
             <div className="mb-4">
               <p className="text-sm text-gray-600">
-                Found {filteredProducts.length} results for "{query}"
+                Found {filteredProducts.length} results for {query}
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
