@@ -106,11 +106,19 @@ export default function CategoryPage() {
         onRemoveFromCart={handleRemoveFromCart}
       />
       
+      {/* Mobile backdrop */}
+      {showSidebar && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden"
+          onClick={() => setShowSidebar(false)}
+        />
+      )}
+
       <div className="flex">
         {/* Sidebar - Hidden on mobile, shown on desktop */}
         <div className={`fixed inset-y-0 left-0 z-40 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
           showSidebar ? 'translate-x-0' : '-translate-x-full'
-        } lg:relative lg:translate-x-0 lg:shadow-none`}>
+        } lg:relative lg:translate-x-0 lg:shadow-none lg:block lg:z-0`}>
           <div className="h-full flex flex-col">
             {/* Sidebar Header */}
             <div className="p-4 border-b lg:hidden">

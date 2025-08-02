@@ -67,28 +67,28 @@ export default function Home() {
         onAddToCart={handleAddToCart}
       />
       
-      <main>
+      <main className="pb-20">
         {/* Hero Section - Hidden on mobile when category is selected */}
         <div className="hidden md:block">
           <HeroSection />
         </div>
         
         {/* Mobile Hero - Simplified */}
-        <div className="md:hidden py-6 px-4">
+        <div className="md:hidden py-4 px-4">
           <div className="text-center">
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">
+            <h1 className="text-xl font-bold text-gray-900 mb-2">
               Fresh Groceries
               <span className="text-teal-600 block">Delivered in Minutes</span>
             </h1>
-            <p className="text-gray-600 mb-4">Get fresh fruits, vegetables, dairy, and household essentials delivered to your doorstep.</p>
+            <p className="text-gray-600 text-sm">Get fresh fruits, vegetables, dairy, and household essentials delivered to your doorstep.</p>
           </div>
         </div>
         
         {/* Categories */}
-        <section className="py-6 md:py-8">
+        <section className="py-4 md:py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-4 md:mb-6">
-              <h2 className="text-xl md:text-2xl font-bold text-gray-900">Shop by Category</h2>
+              <h2 className="text-lg md:text-2xl font-bold text-gray-900">Shop by Category</h2>
               <button className="text-teal-600 hover:text-teal-700 font-medium text-sm md:text-base">
                 View All
               </button>
@@ -108,10 +108,10 @@ export default function Home() {
         </section>
 
         {/* Featured Products */}
-        <section className="py-6 md:py-8">
+        <section className="py-4 md:py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-4 md:mb-6">
-              <h2 className="text-xl md:text-2xl font-bold text-gray-900">
+              <h2 className="text-lg md:text-2xl font-bold text-gray-900">
                 {selectedCategory 
                   ? categories.find(c => c.id === selectedCategory)?.name 
                   : 'Featured Products'

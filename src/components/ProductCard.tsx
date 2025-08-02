@@ -44,7 +44,7 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
         {/* Wishlist button */}
         <button
           onClick={() => setIsWishlisted(!isWishlisted)}
-          className="absolute top-1 right-1 md:top-2 md:right-2 p-1 rounded-full bg-white shadow-sm hover:shadow-md transition-shadow"
+          className="absolute top-1 right-1 md:top-2 md:right-2 p-1.5 md:p-1 rounded-full bg-white shadow-sm hover:shadow-md transition-shadow"
         >
           <Heart 
             className={cn(
@@ -56,26 +56,26 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
 
         {/* Discount badge */}
         {product.discount && (
-          <div className="absolute top-1 left-1 md:top-2 md:left-2 bg-red-500 text-white text-xs px-1 py-0.5 md:px-2 md:py-1 rounded-full">
+          <div className="absolute top-1 left-1 md:top-2 md:left-2 bg-red-500 text-white text-xs px-1.5 py-0.5 md:px-2 md:py-1 rounded-full">
             {product.discount}% OFF
           </div>
         )}
 
         {/* Organic badge */}
         {product.isOrganic && (
-          <div className="absolute bottom-1 left-1 md:bottom-2 md:left-2 bg-green-500 text-white text-xs px-1 py-0.5 md:px-2 md:py-1 rounded-full">
+          <div className="absolute bottom-1 left-1 md:bottom-2 md:left-2 bg-green-500 text-white text-xs px-1.5 py-0.5 md:px-2 md:py-1 rounded-full">
             Organic
           </div>
         )}
       </div>
 
       {/* Product Info */}
-      <div className="space-y-1 md:space-y-2">
+      <div className="space-y-1.5 md:space-y-2">
         {/* Brand */}
         <p className="text-xs text-teal-600 font-medium">{product.brand}</p>
         
         {/* Product Name */}
-        <h3 className="font-medium text-gray-900 text-xs md:text-sm line-clamp-2">
+        <h3 className="font-medium text-gray-900 text-xs md:text-sm line-clamp-2 leading-tight">
           {product.name}
         </h3>
 
@@ -112,7 +112,7 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
               onClick={handleAddToCart}
               disabled={!product.inStock}
               className={cn(
-                "w-full py-2 px-3 md:px-4 rounded-lg font-medium transition-colors text-xs md:text-sm",
+                "w-full py-2.5 md:py-2 px-3 md:px-4 rounded-lg font-medium transition-colors text-xs md:text-sm",
                 product.inStock
                   ? "bg-teal-600 text-white hover:bg-teal-700"
                   : "bg-gray-300 text-gray-500 cursor-not-allowed"
@@ -131,14 +131,14 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
             <div className="flex items-center justify-between bg-gray-50 rounded-lg p-2">
               <button
                 onClick={() => handleQuantityChange(quantity - 1)}
-                className="p-1 rounded-full hover:bg-gray-200 transition-colors"
+                className="p-1.5 md:p-1 rounded-full hover:bg-gray-200 transition-colors"
               >
                 <Minus className="w-3 h-3 md:w-4 md:h-4" />
               </button>
               <span className="font-medium text-sm">{quantity}</span>
               <button
                 onClick={() => handleQuantityChange(quantity + 1)}
-                className="p-1 rounded-full hover:bg-gray-200 transition-colors"
+                className="p-1.5 md:p-1 rounded-full hover:bg-gray-200 transition-colors"
               >
                 <Plus className="w-3 h-3 md:w-4 md:h-4" />
               </button>
