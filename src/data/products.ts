@@ -75,7 +75,7 @@ export const products: Product[] = [
         inStock: true,
         rating: 4.5,
         reviewCount: 128,
-        brand: 'Bansal Fresh',
+        brand: 'Fresh Harvest',
         isOrganic: true,
         discount: 20
     },
@@ -92,7 +92,7 @@ export const products: Product[] = [
         inStock: true,
         rating: 4.2,
         reviewCount: 95,
-        brand: 'Bansal Fresh',
+        brand: 'Fresh Harvest',
         isOrganic: true
     },
     {
@@ -108,7 +108,7 @@ export const products: Product[] = [
         inStock: true,
         rating: 4.0,
         reviewCount: 67,
-        brand: 'Bansal Fresh',
+        brand: 'Fresh Harvest',
         isOrganic: true
     },
     {
@@ -124,7 +124,7 @@ export const products: Product[] = [
         inStock: true,
         rating: 4.1,
         reviewCount: 89,
-        brand: 'Bansal Fresh'
+        brand: 'Fresh Harvest'
     },
 
     // Dairy & Bread
@@ -141,7 +141,7 @@ export const products: Product[] = [
         inStock: true,
         rating: 4.6,
         reviewCount: 234,
-        brand: 'Bansal Dairy',
+        brand: 'Dairy Pure',
         isOrganic: true
     },
     {
@@ -157,7 +157,7 @@ export const products: Product[] = [
         inStock: true,
         rating: 4.3,
         reviewCount: 156,
-        brand: 'Bansal Bakery'
+        brand: 'Fresh Bakery'
     },
     {
         id: 'eggs-12',
@@ -172,7 +172,7 @@ export const products: Product[] = [
         inStock: true,
         rating: 4.4,
         reviewCount: 189,
-        brand: 'Bansal Farm'
+        brand: 'Farm Fresh'
     },
 
     // Meat & Fish
@@ -189,7 +189,7 @@ export const products: Product[] = [
         inStock: true,
         rating: 4.5,
         reviewCount: 145,
-        brand: 'Bansal Meat'
+        brand: 'Fresh Meat'
     },
     {
         id: 'fish-500g',
@@ -204,13 +204,13 @@ export const products: Product[] = [
         inStock: true,
         rating: 4.2,
         reviewCount: 98,
-        brand: 'Bansal Fish'
+        brand: 'Ocean Fresh'
     },
 
     // Beverages
     {
         id: 'cola-2l',
-        name: 'Bansal Cola',
+        name: 'Fresh Cola',
         description: 'Refreshing cola drink',
         price: 85,
         weight: 2000,
@@ -221,7 +221,7 @@ export const products: Product[] = [
         inStock: true,
         rating: 4.1,
         reviewCount: 267,
-        brand: 'Bansal Beverages'
+        brand: 'Fresh Beverages'
     },
     {
         id: 'juice-1l',
@@ -236,13 +236,13 @@ export const products: Product[] = [
         inStock: true,
         rating: 4.3,
         reviewCount: 134,
-        brand: 'Bansal Fresh'
+        brand: 'Fresh Harvest'
     },
 
     // Snacks
     {
         id: 'chips-100g',
-        name: 'Bansal Potato Chips',
+        name: 'Fresh Potato Chips',
         description: 'Crunchy potato chips',
         price: 25,
         weight: 100,
@@ -253,11 +253,11 @@ export const products: Product[] = [
         inStock: true,
         rating: 4.0,
         reviewCount: 312,
-        brand: 'Bansal Snacks'
+        brand: 'Fresh Snacks'
     },
     {
         id: 'biscuits-200g',
-        name: 'Bansal Cream Biscuits',
+        name: 'Fresh Cream Biscuits',
         description: 'Delicious cream biscuits',
         price: 30,
         weight: 200,
@@ -268,13 +268,13 @@ export const products: Product[] = [
         inStock: true,
         rating: 4.2,
         reviewCount: 198,
-        brand: 'Bansal Bakery'
+        brand: 'Fresh Bakery'
     },
 
     // Household
     {
         id: 'detergent-1kg',
-        name: 'Bansal Laundry Detergent',
+        name: 'Fresh Laundry Detergent',
         description: 'Powerful laundry detergent',
         price: 180,
         weight: 1000,
@@ -285,11 +285,11 @@ export const products: Product[] = [
         inStock: true,
         rating: 4.4,
         reviewCount: 167,
-        brand: 'Bansal Home'
+        brand: 'Fresh Home'
     },
     {
         id: 'toilet-paper-12',
-        name: 'Bansal Toilet Paper',
+        name: 'Fresh Toilet Paper',
         description: 'Soft and strong toilet paper',
         price: 150,
         weight: 1200,
@@ -300,13 +300,13 @@ export const products: Product[] = [
         inStock: true,
         rating: 4.1,
         reviewCount: 89,
-        brand: 'Bansal Home'
+        brand: 'Fresh Home'
     },
 
     // Personal Care
     {
         id: 'shampoo-500ml',
-        name: 'Bansal Hair Shampoo',
+        name: 'Fresh Hair Shampoo',
         description: 'Gentle hair shampoo',
         price: 220,
         weight: 500,
@@ -317,11 +317,11 @@ export const products: Product[] = [
         inStock: true,
         rating: 4.3,
         reviewCount: 145,
-        brand: 'Bansal Care'
+        brand: 'Fresh Care'
     },
     {
         id: 'toothpaste-100g',
-        name: 'Bansal Toothpaste',
+        name: 'Fresh Toothpaste',
         description: 'Fresh mint toothpaste',
         price: 85,
         weight: 100,
@@ -332,6 +332,6 @@ export const products: Product[] = [
         inStock: true,
         rating: 4.2,
         reviewCount: 234,
-        brand: 'Bansal Care'
+        brand: 'Fresh Care'
     }
 ] 
