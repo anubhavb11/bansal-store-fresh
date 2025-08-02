@@ -2,7 +2,6 @@
 
 import { Search, ShoppingCart, User, MapPin, Menu } from 'lucide-react'
 import { useState } from 'react'
-import { cn } from '@/lib/utils'
 import Cart from './Cart'
 import SearchResults from './SearchResults'
 import { Product } from '@/types'

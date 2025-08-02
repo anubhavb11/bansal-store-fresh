@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Search, Filter, X, ArrowLeft } from 'lucide-react'
+import { Search, Filter, ArrowLeft } from 'lucide-react'
 import ProductCard from './ProductCard'
 import { products } from '@/data/products'
 import { Product } from '@/types'
@@ -70,9 +70,9 @@ export default function SearchResults({ query, onClose, onAddToCart }: SearchRes
         ) : filteredProducts.length > 0 ? (
           <div className="p-4">
             <div className="mb-4">
-              <p className="text-sm text-gray-600">
-                Found {filteredProducts.length} results for "{query}"
-              </p>
+                              <p className="text-sm text-gray-600">
+                  Found {filteredProducts.length} results for &quot;{query}&quot;
+                </p>
             </div>
             <div className="grid grid-cols-2 gap-3 md:gap-4">
               {filteredProducts.map((product) => (

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { ArrowLeft, Filter, SortAsc } from 'lucide-react'
 import { useParams, useRouter } from 'next/navigation'
 import { categories, products } from '@/data/products'

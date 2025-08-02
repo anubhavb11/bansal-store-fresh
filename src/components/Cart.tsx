@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+
 import { X, Trash2, Minus, Plus, ArrowLeft } from 'lucide-react'
 import { formatPrice } from '@/lib/utils'
 import { Product } from '@/types'
